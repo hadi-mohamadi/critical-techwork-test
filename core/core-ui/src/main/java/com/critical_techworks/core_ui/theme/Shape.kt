@@ -1,4 +1,4 @@
-package com.critical_techworks.news.ui.theme
+package com.critical_techworks.core_ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
