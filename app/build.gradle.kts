@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    compileSdk = 31
+    compileSdk = DefaultConfig.compileSdk
 
     defaultConfig {
-        applicationId = "com.critical_techworks.news"
-        minSdk = 21
-        targetSdk = 31
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = DefaultConfig.applicationId
+        minSdk = DefaultConfig.minSdk
+        targetSdk = DefaultConfig.targetSdk
+        versionCode = DefaultConfig.versionCode
+        versionName = DefaultConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -20,7 +20,7 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
