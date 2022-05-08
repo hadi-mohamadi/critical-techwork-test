@@ -66,4 +66,13 @@ dependencies {
     androidTestImplementation(AndroidX.testEspresso)
     androidTestImplementation(AndroidX.composeUiTestJUnit)
     debugImplementation(AndroidX.composeUiTooling)
+
+    //Accompanist
+    implementation(Accompanist.permissions)
+    implementation(Accompanist.systemUiController)
+
+    //navigation component
+    implementation(AndroidX.navigationCompose)
+    implementation(AndroidX.navigationUiKtx)
+    implementation(AndroidX.navigationRuntimeKtx)
 }

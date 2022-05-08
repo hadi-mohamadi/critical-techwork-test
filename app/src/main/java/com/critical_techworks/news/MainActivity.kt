@@ -3,23 +3,16 @@ package com.critical_techworks.news
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.ui.Modifier
-import com.critical_techworks.core_ui.theme.NewsTheme
+import androidx.core.view.WindowCompat
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalPermissionsApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            NewsTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                }
-            }
+            NewsApp()
         }
     }
 }
