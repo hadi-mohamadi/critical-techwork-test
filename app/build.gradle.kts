@@ -53,6 +53,8 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.coreUi))
+
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.composeUi)
     implementation(AndroidX.composeMaterial)
