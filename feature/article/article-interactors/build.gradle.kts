@@ -14,10 +14,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-
-        //The best practice is to put this api key in the local.properties file
-        //But as you would like to be able to run the program without any issues I put it here
-        buildConfigField("String", "apiKey", "\"top-71e4b0373c2a4b21b48365deb7cbd45c\"")
     }
 
     buildTypes {
@@ -48,16 +44,13 @@ android {
             buildConfigField("String", "source", "\"top-headlines\"")
         }
     }
-
-    hilt {
-        enableAggregatingTask = true
-    }
 }
 
 dependencies {
 
     implementation(project(Modules.coreNetwork))
     implementation(project(Modules.featureArticleDomain))
+    implementation(project(Modules.featureArticleRepository))
 
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appcompat)
@@ -69,17 +62,8 @@ dependencies {
     //hilt
     implementation(Hilt.android)
     kapt(Hilt.daggerCompiler)
-    implementation(Hilt.lifecycleViewModel)
     kapt(Hilt.compiler)
-
-    //retrofit
-    implementation(Retrofit.retrofit)
-    implementation(Retrofit.gson)
-    implementation(Retrofit.loggingInterceptor)
 
     //Paging
     implementation(AndroidX.paging)
-
-    //kotlin coroutines
-    implementation(Coroutines.core)
 }
