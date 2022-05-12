@@ -50,6 +50,7 @@ android {
 
 dependencies {
 
+    implementation(project(Modules.coreNetwork))
     implementation(project(Modules.coreUi))
 
     implementation(AndroidX.coreKtx)
@@ -67,6 +68,7 @@ dependencies {
     implementation(AndroidX.lifecycleRuntime)
     implementation(AndroidX.activityCompose)
     implementation(AndroidX.composeUiTooling)
+    implementation(Biometric.biometric)
 
     //hilt
     implementation(Hilt.android)

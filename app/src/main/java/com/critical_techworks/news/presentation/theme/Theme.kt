@@ -1,4 +1,4 @@
-package com.critical_techworks.news.theme
+package com.critical_techworks.news.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

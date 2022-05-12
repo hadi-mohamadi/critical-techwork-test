@@ -7,7 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.critical_techworks.news.theme.AndroidSampleTheme
+import com.critical_techworks.news.presentation.ArticlesNavGraph
+import com.critical_techworks.news.presentation.theme.AndroidSampleTheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 

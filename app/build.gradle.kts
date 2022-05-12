@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -54,6 +56,7 @@ android {
 
 dependencies {
     implementation(project(Modules.coreUi))
+    implementation(project(Modules.featureLogin))
 
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.composeUi)
@@ -61,6 +64,7 @@ dependencies {
     implementation(AndroidX.composeUiToolingPreview)
     implementation(AndroidX.lifecycleRuntime)
     implementation(AndroidX.activityCompose)
+    implementation(AndroidX.appcompat)
     testImplementation(JUnit.junit)
     androidTestImplementation(AndroidX.testJUnit)
     androidTestImplementation(AndroidX.testEspresso)
@@ -75,4 +79,11 @@ dependencies {
     implementation(AndroidX.navigationCompose)
     implementation(AndroidX.navigationUiKtx)
     implementation(AndroidX.navigationRuntimeKtx)
+
+    //hilt
+    implementation(Hilt.android)
+    kapt(Hilt.daggerCompiler)
+    kapt(Hilt.compiler)
+    implementation(Hilt.lifecycleViewModel)
+    implementation(Hilt.navigationCompose)
 }
