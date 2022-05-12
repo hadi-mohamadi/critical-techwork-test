@@ -14,6 +14,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        //The best practice is to put this api key in the local.properties file
+        //But as you would like to be able to run the program without any issues I put it here
+        buildConfigField("String", "apiKey", "\"top-71e4b0373c2a4b21b48365deb7cbd45c\"")
     }
 
     buildTypes {
@@ -31,6 +35,22 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    flavorDimensions += "source"
+    productFlavors {
+        create("everything") {
+            buildConfigField("String", "source", "\"everything\"")
+            dimension = "source"
+        }
+        create("full") {
+            dimension = "topHeadlines"
+            buildConfigField("String", "source", "\"top-headlines\"")
+        }
+    }
+
+    hilt {
+        enableAggregatingTask = true
     }
 }
 
