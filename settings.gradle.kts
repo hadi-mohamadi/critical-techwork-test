@@ -16,3 +16,4 @@ rootProject.name = "news"
 include(":app")
 include(":core:core-ui")
 include(":core:core-network")
+include(":feature:login")

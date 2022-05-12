@@ -15,4 +15,6 @@ object AndroidX {
     const val navigationCompose = "androidx.navigation:navigation-compose:$navigationVersion"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
     const val navigationRuntimeKtx = "androidx.navigation:navigation-runtime-ktx:$navigationVersion"
+    const val appcompat="androidx.appcompat:appcompat:1.3.1"
+    const val material="com.google.android.material:material:1.4.0"
 }
