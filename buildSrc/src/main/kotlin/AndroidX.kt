@@ -17,4 +17,5 @@ object AndroidX {
     const val navigationRuntimeKtx = "androidx.navigation:navigation-runtime-ktx:$navigationVersion"
     const val appcompat="androidx.appcompat:appcompat:1.3.1"
     const val material="com.google.android.material:material:1.4.0"
+    const val paging = "androidx.paging:paging-compose:1.0.0-alpha14"
 }
