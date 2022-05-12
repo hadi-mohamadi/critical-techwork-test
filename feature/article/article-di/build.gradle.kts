@@ -32,6 +32,22 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    flavorDimensions += "source"
+    productFlavors {
+        create("everything") {
+            buildConfigField("String", "source", "\"everything\"")
+            dimension = "source"
+        }
+        create("topHeadlines") {
+            dimension = "source"
+            buildConfigField("String", "source", "\"top-headlines\"")
+        }
+    }
+
+    hilt {
+        enableAggregatingTask = true
+    }
 }
 
 dependencies {

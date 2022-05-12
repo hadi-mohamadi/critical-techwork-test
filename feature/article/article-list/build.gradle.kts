@@ -53,21 +53,55 @@ android {
 dependencies {
 
     implementation(project(Modules.coreNetwork))
+    implementation(project(Modules.coreUi))
     implementation(project(Modules.featureArticleDomain))
-    implementation(project(Modules.featureArticleRepository))
+    implementation(project(Modules.featureArticleInteractors))
 
-    implementation(AndroidX.coreKtx)
-    implementation(AndroidX.appcompat)
     testImplementation(JUnit.junit)
     testImplementation(Mockk.mockk)
     androidTestImplementation(Mockk.androidMockk)
     androidTestImplementation(AndroidX.testJUnit)
+    androidTestImplementation(AndroidX.composeUiTestJUnit)
+    androidTestImplementation(AndroidX.testEspresso)
+    implementation(AndroidX.coreKtx)
+    implementation(AndroidX.appcompat)
+    implementation(AndroidX.material)
+    implementation(AndroidX.composeUi)
+    implementation(AndroidX.composeMaterial)
+    implementation(AndroidX.composeUiToolingPreview)
+    implementation(AndroidX.lifecycleRuntime)
+    implementation(AndroidX.activityCompose)
+    debugImplementation(AndroidX.composeUiTooling)
+
+    //kotlin coroutines
+    implementation(Coroutines.core)
+    implementation(Coroutines.android)
+
+    //Paging
+    implementation(AndroidX.paging)
 
     //hilt
     implementation(Hilt.android)
     kapt(Hilt.daggerCompiler)
+    implementation(Hilt.lifecycleViewModel)
     kapt(Hilt.compiler)
+    implementation(Hilt.navigationCompose)
 
-    //Paging
-    implementation(AndroidX.paging)
+    //retrofit
+    implementation(Retrofit.retrofit)
+    implementation(Retrofit.gson)
+    implementation(Retrofit.loggingInterceptor)
+
+    //Coil for image loading
+    implementation(Coil.coil)
+
+    //androidx lifecycle
+    implementation(Lifecycle.viewModel)
+    implementation(Lifecycle.commonJava8)
+    implementation(Lifecycle.runtimeKtx)
+    implementation(Lifecycle.reactiveStreamsKtx)
+    androidTestImplementation(Arc.coreTesting)
+
+    //Accompanist
+    implementation(Accompanist.systemUiController)
 }
