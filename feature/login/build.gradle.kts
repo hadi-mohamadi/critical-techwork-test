@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
@@ -9,16 +9,11 @@ android {
     compileSdk = DefaultConfig.compileSdk
 
     defaultConfig {
-        applicationId = DefaultConfig.applicationId
         minSdk = DefaultConfig.minSdk
         targetSdk = DefaultConfig.targetSdk
-        versionCode = DefaultConfig.versionCode
-        versionName = DefaultConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -37,6 +32,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
     }
@@ -50,35 +46,29 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-
-
 }
 
 dependencies {
+
+    implementation(project(Modules.coreNetwork))
     implementation(project(Modules.coreUi))
-    implementation(project(Modules.featureLogin))
 
     implementation(AndroidX.coreKtx)
+    implementation(AndroidX.appcompat)
+    implementation(AndroidX.material)
+    testImplementation(JUnit.junit)
+    testImplementation(Mockk.mockk)
+    androidTestImplementation(Mockk.androidMockk)
+    androidTestImplementation(AndroidX.testJUnit)
+    androidTestImplementation(AndroidX.composeUiTestJUnit)
+    androidTestImplementation(AndroidX.testEspresso)
     implementation(AndroidX.composeUi)
     implementation(AndroidX.composeMaterial)
     implementation(AndroidX.composeUiToolingPreview)
     implementation(AndroidX.lifecycleRuntime)
     implementation(AndroidX.activityCompose)
-    implementation(AndroidX.appcompat)
-    testImplementation(JUnit.junit)
-    androidTestImplementation(AndroidX.testJUnit)
-    androidTestImplementation(AndroidX.testEspresso)
-    androidTestImplementation(AndroidX.composeUiTestJUnit)
-    debugImplementation(AndroidX.composeUiTooling)
-
-    //Accompanist
-    implementation(Accompanist.permissions)
-    implementation(Accompanist.systemUiController)
-
-    //navigation component
-    implementation(AndroidX.navigationCompose)
-    implementation(AndroidX.navigationUiKtx)
-    implementation(AndroidX.navigationRuntimeKtx)
+    implementation(AndroidX.composeUiTooling)
+    implementation(Biometric.biometric)
 
     //hilt
     implementation(Hilt.android)
@@ -86,4 +76,15 @@ dependencies {
     kapt(Hilt.compiler)
     implementation(Hilt.lifecycleViewModel)
     implementation(Hilt.navigationCompose)
+
+    //androidx lifecycle
+    implementation(Lifecycle.viewModel)
+    implementation(Lifecycle.commonJava8)
+    implementation(Lifecycle.runtimeKtx)
+    implementation(Lifecycle.reactiveStreamsKtx)
+    androidTestImplementation(Arc.coreTesting)
+
+    //Accompanist
+    implementation(Accompanist.permissions)
+    implementation(Accompanist.systemUiController)
 }
