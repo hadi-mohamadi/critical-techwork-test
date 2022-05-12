@@ -1,4 +1,4 @@
-package com.critical_techworks.news
+package com.critical_techworks.news.presentation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
@@ -7,15 +7,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.critical_techworks.news.presentation.ArticlesNavGraph
-import com.critical_techworks.news.presentation.theme.AndroidSampleTheme
+import com.critical_techworks.news.presentation.theme.NewsTheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @ExperimentalPermissionsApi
 @Composable
 fun NewsApp() {
-    AndroidSampleTheme {
+    NewsTheme {
         val systemUiController = rememberSystemUiController()
         val darkIcons = MaterialTheme.colors.isLight
         SideEffect {

@@ -24,7 +24,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun AndroidSampleTheme(
+fun NewsTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
