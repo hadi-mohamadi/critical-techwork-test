@@ -33,6 +33,14 @@ android {
         jvmTarget = "1.8"
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = AndroidX.composeVersion
+    }
+
     flavorDimensions += "source"
     productFlavors {
         create("everything") {
