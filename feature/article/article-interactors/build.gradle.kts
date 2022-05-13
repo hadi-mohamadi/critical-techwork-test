@@ -44,6 +44,16 @@ android {
             buildConfigField("String", "source", "\"top-headlines\"")
         }
     }
+
+    hilt {
+        enableAggregatingTask = true
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
 }
 
 dependencies {
@@ -58,6 +68,7 @@ dependencies {
     testImplementation(Mockk.mockk)
     androidTestImplementation(Mockk.androidMockk)
     androidTestImplementation(AndroidX.testJUnit)
+    androidTestImplementation(Arc.coreTesting)
 
     //hilt
     implementation(Hilt.android)
