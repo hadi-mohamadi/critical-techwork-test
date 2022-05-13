@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.critical_techworks.news">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.critical_techworks.news.presentation.BaseApplication"
         android:allowBackup="true"
