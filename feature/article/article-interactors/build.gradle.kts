@@ -61,6 +61,7 @@ dependencies {
     implementation(project(Modules.coreNetwork))
     implementation(project(Modules.featureArticleDomain))
     implementation(project(Modules.featureArticleRepository))
+    implementation(project(Modules.featureArticleDi))
 
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appcompat)
@@ -68,7 +69,6 @@ dependencies {
     testImplementation(Mockk.mockk)
     androidTestImplementation(Mockk.androidMockk)
     androidTestImplementation(AndroidX.testJUnit)
-    androidTestImplementation(Arc.coreTesting)
 
     //hilt
     implementation(Hilt.android)
