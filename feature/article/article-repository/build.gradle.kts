@@ -17,7 +17,7 @@ android {
 
         //The best practice is to put this api key in the local.properties file
         //But as you would like to be able to run the program without any issues I put it here
-        buildConfigField("String", "apiKey", "\"top-71e4b0373c2a4b21b48365deb7cbd45c\"")
+        buildConfigField("String", "apiKey", "\"71e4b0373c2a4b21b48365deb7cbd45c\"")
     }
 
     buildTypes {
