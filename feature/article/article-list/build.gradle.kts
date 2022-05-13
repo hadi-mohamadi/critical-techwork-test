@@ -64,6 +64,7 @@ dependencies {
     implementation(project(Modules.coreUi))
     implementation(project(Modules.featureArticleDomain))
     implementation(project(Modules.featureArticleInteractors))
+    implementation(project(Modules.featureArticleUtil))
 
     testImplementation(JUnit.junit)
     testImplementation(Mockk.mockk)

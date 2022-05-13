@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.critical_techworks.article_detail.ArticleScreen
 import com.critical_techworks.article_list.ArticleListScreen
 import com.critical_techworks.article_list.ListViewModel
 import com.critical_techworks.login.presentation.ui.login.LoginScreen
@@ -48,7 +49,9 @@ fun ArticlesNavGraph(
         }
         composable(
             route = MainDestinations.ARTICLE_ROUTE
-        ) {}
+        ) {
+            ArticleScreen()
+        }
     }
 }
 

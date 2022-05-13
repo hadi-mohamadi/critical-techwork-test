@@ -73,6 +73,7 @@ dependencies {
     implementation(project(Modules.coreUi))
     implementation(project(Modules.featureLogin))
     implementation(project(Modules.featureArticleList))
+    implementation(project(Modules.featureArticleDetail))
 
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.composeUi)

@@ -41,10 +41,11 @@ android {
 }
 
 dependencies {
-    
+
     implementation(project(Modules.coreNetwork))
     implementation(project(Modules.coreUi))
     implementation(project(Modules.featureArticleDomain))
+    implementation(project(Modules.featureArticleUtil))
 
     implementation(AndroidX.appcompat)
     implementation(AndroidX.material)

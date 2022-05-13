@@ -45,8 +45,8 @@ internal fun ArticleCard(
                     .border(1.5.dp, MaterialTheme.colors.primary, CircleShape),
                 painter = rememberImagePainter(data = article?.urlToImage,
                     builder = {
-                        placeholder(R.drawable.ic_news)
-                        error(R.drawable.ic_news)
+                        placeholder(com.critical_techworks.article_util.R.drawable.ic_news)
+                        error(com.critical_techworks.article_util.R.drawable.ic_news)
 
                     }),
                 contentDescription = null,
