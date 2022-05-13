@@ -1,17 +1,19 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
-    compileSdk = 31
+    compileSdk = DefaultConfig.compileSdk
 
     defaultConfig {
-        applicationId = "com.critical_techworks.news"
-        minSdk = 21
-        targetSdk = 31
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = DefaultConfig.applicationId
+        minSdk = DefaultConfig.minSdk
+        targetSdk = DefaultConfig.targetSdk
+        versionCode = DefaultConfig.versionCode
+        versionName = DefaultConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -20,7 +22,7 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -49,19 +51,56 @@ android {
         }
     }
 
+    flavorDimensions += "source"
+    productFlavors {
+        create("everything") {
+            buildConfigField("String", "source", "\"everything\"")
+            dimension = "source"
+        }
+        create("topHeadlines") {
+            dimension = "source"
+            buildConfigField("String", "source", "\"top-headlines\"")
+        }
+    }
+
+    hilt {
+        enableAggregatingTask = true
+    }
 
 }
 
 dependencies {
+    implementation(project(Modules.coreUi))
+    implementation(project(Modules.featureLogin))
+    implementation(project(Modules.featureArticleList))
+    implementation(project(Modules.featureArticleDetail))
+
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.composeUi)
     implementation(AndroidX.composeMaterial)
     implementation(AndroidX.composeUiToolingPreview)
     implementation(AndroidX.lifecycleRuntime)
     implementation(AndroidX.activityCompose)
+    implementation(AndroidX.appcompat)
     testImplementation(JUnit.junit)
     androidTestImplementation(AndroidX.testJUnit)
     androidTestImplementation(AndroidX.testEspresso)
     androidTestImplementation(AndroidX.composeUiTestJUnit)
     debugImplementation(AndroidX.composeUiTooling)
+
+    //Accompanist
+    implementation(Accompanist.permissions)
+    implementation(Accompanist.systemUiController)
+
+    //navigation component
+    implementation(AndroidX.navigationCompose)
+    implementation(AndroidX.navigationUiKtx)
+    implementation(AndroidX.navigationRuntimeKtx)
+
+    //hilt
+    implementation(Hilt.android)
+    kapt(Hilt.daggerCompiler)
+    kapt(Hilt.compiler)
+    implementation(Hilt.lifecycleViewModel)
+    implementation(Hilt.navigationCompose)
 }
