@@ -9,4 +9,6 @@ object Modules {
     const val featureArticleDi = ":feature:article:article-di"
     const val featureArticleInteractors = ":feature:article:article-interactors"
     const val featureArticleList = ":feature:article:article-list"
+    const val featureArticleDetail = ":feature:article:article-detail"
+    const val featureArticleUtil = ":feature:article:article-util"
 }

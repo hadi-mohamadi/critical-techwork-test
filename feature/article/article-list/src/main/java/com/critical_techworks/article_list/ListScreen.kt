@@ -20,8 +20,9 @@ import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.critical_techworks.article_domain.model.Article
+import com.critical_techworks.article_util.temp.TempObject
+import com.critical_techworks.article_util.theme.Source
 import com.critical_techworks.core_ui.theme.LabelRetry
-import com.critical_techworks.core_ui.theme.Source
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
@@ -38,7 +39,7 @@ fun ArticleListScreen(articles: Flow<PagingData<Article>>, navigateToArticle: ()
         LazyColumn(contentPadding = PaddingValues(top = 16.dp)) {
             items(items = lazyMovieItems) { article ->
                 ArticleCard(article = article, onCardClick = {
-                    //TempObject.article = article!!
+                    TempObject.article = article!!
                     navigateToArticle()
                 })
             }
